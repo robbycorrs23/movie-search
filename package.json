@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "next": "^11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4"
+  },
+  "name": "moviesearch",
+  "description": "A movie search app powered by the TMDB API.",
+  "version": "1.0.0",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git remote -v https://github.com/robbycorrs23/moviesearch.git"
+  },
+  "keywords": [
+    "movies",
+    "tmdb",
+    "react"
+  ],
+  "author": "Robert Corrado",
+  "license": "ISC"
+}
