@@ -3,9 +3,11 @@ import {useState, useEffect} from "react"
 export default function SearchNow () {
     const [query, setQuery] = useState('')
     const [movies, setMovies] = useState([])
+    const [ active, setActive ] = useState(false)
 
     const searchMovie = async event => {
         event.preventDefault()
+        console.log(process.env.API_KEY);
 
         const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`
 
@@ -18,6 +20,15 @@ export default function SearchNow () {
         }
 
     }
+
+    const handleChange = (e) => {
+
+
+        setActive(true)
+        setQuery(e.target.value)
+    }
+
+
 
 
     return (
@@ -34,13 +45,13 @@ export default function SearchNow () {
                         autoComplete="name"
                         placeholder='Type Movie Name Here...'
                         value={query}
-                        onChange={(e) => setQuery(e.target.value)}
+                        onChange={handleChange}
                         required
                     />
                     <button className='ml-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded' type="submit">Search Now</button>
                 </form>
                 <div>
-                    {movies.length > 0 ? movies.slice(0,5).map(movie =>
+                    {active ? movies.slice(0,5).map(movie =>
 
                         <div className="flex md:flex-row flex-col mb-2 md:mb-4">
                             <div className='w-full md:w-2/6 md:h-4/6'>
@@ -52,9 +63,11 @@ export default function SearchNow () {
                                 <p className=''>{movie.overview}</p>
                             </div>
                         </div>
-                    ): <p>No movies exist, check spelling!</p>}
+                    ) : query.length === 0 && active ? <p>No movies exist, check spelling!</p>  : null}
+
                 </div>
             </div>
         </>
     )
 }
+
