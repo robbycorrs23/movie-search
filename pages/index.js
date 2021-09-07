@@ -12,8 +12,8 @@ export default function Home() {
       </Head>
       <Navbar />
 
-      <main id="bg-theater" className="h-5/6">
-        <div className='w-3/5 flex flex-col md:justify-center lg:justify-center md:flex-row lg:flex-row mt-10 md:mt-36 lg:mt-36 mx-auto text-center'>
+      <main id="bg-theater" className="h-full">
+        <div className='w-3/5 flex flex-row justify-center content-center flex-col md:flex-row lg:flex-row mx-auto text-center my-12 md:my-32 lg:my-32'>
           <Link href="/search">
             <a className='p-2 mb-4 md:p-8 md:mr-6 lg:p-12 hover:scale-125 text-red-500 text-xl bg-white rounded'>Search</a>
           </Link>
