@@ -15,7 +15,7 @@ export default function GenreNav({ genres, setGenres, setCurrent}) {
             <div className="flex flex-wrap justify-center align-center mx-auto w-4/5 rounded-lg py-2">
                 {genres.map(genre => 
                     <button 
-                        className='m-1 py-1 px-2 bg-gray-500 text-white ' 
+                        className='m-1 py-1 px-2 bg-gray-500 text-white hover:bg-red-400' 
                         name={genre.name} 
                         onClick={() => setCurrent(genre.id)} >
                         {genre.name}
